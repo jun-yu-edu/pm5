@@ -1,0 +1,25 @@
+- article 전체를 json 형식으로 응답받고 싶다.
+
+- RESTful한 api가 필요합니다..
+
+- URL :		/articles/
+- method : 		'GET'
+
+urls.py 를 작성합니다.
+그것과 연결된 views함수를 작성합니다.
+
+- views함수에는
+	article 전체에 대한 데이터
+		articles = Article.objects.all()
+	JSON으로 만들고 싶어 -> serializer를 활용합니다.
+		serializer = ArticleSerializer(articles, many=True)
+			 # 여러개는 many=True
+	response에 serializer의 data를 전달하면
+	하고싶은건 끝.
+	
+
+
+
+
+
+
