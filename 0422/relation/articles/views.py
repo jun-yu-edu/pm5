@@ -3,7 +3,7 @@ from articles.models import Article, Comment
 
 from rest_framework.response import Response
 from rest_framework.decorators import api_view
-from articles.serializers import ArticleSerializer, ProductSerializer, CommentSerializer
+from articles.serializers import ArticleSerializer, CommentSerializer
 
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
@@ -20,11 +20,10 @@ def article_list(request):
     
     elif request.method == 'POST':
         data = request.data
-        author = request.user
         serializer = ArticleSerializer(data=data)
 
         if serializer.is_valid(raise_exception=True):
-            serializer.save(author=author)
+            serializer.save()
             return Response(serializer.data)
 
 
@@ -75,24 +74,3 @@ def comment_detail(request, article_id, comment_id):
         serializer.save()
         return Response(serializer.data)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-@api_view(['POST'])
-def products_list(request):
-    data = request.data
-    serializer = ProductSerializer(data=data)
-
-    if serializer.is_valid(raise_exception=True):
-        serializer.save()
-        return Response(serializer.data)

@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Article, Product, Comment
+from .models import Article, Comment
 
 
 class CommentSerializer(serializers.ModelSerializer):
@@ -25,23 +25,4 @@ class ArticleSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Article
-        # fields = '__all__'
-        fields = ("id", "title", "content", "comment_set", "author")
-        extra_kwargs = {"author": {"read_only": True}}
-
-
-
-
-
-
-
-
-
-
-
-
-class ProductSerializer(serializers.ModelSerializer):
-
-    class Meta:
-        model = Product
         fields = '__all__'
