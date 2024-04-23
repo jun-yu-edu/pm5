@@ -7,11 +7,17 @@ from articles.serializers import ArticleSerializer, CommentSerializer
 
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import IsAuthenticated
+from accounts.serializers import UserSerializer
+import logging
+
+logger = logging.getLogger(__name__)
 
 @api_view(['GET', 'POST'])
 # @permission_classes([IsAuthenticated])
 def article_list(request):
     if request.method == 'GET':
+        logger.info("articles")
+
         # 모든 article 데이터 json으로 응답하기
         articles = Article.objects.all()
         serializer = ArticleSerializer(articles, many=True)
@@ -19,11 +25,12 @@ def article_list(request):
         return Response(serializer.data)
     
     elif request.method == 'POST':
+        author = request.user
         data = request.data
         serializer = ArticleSerializer(data=data)
 
         if serializer.is_valid(raise_exception=True):
-            serializer.save()
+            serializer.save(author=author)
             return Response(serializer.data)
 
 
@@ -74,3 +81,10 @@ def comment_detail(request, article_id, comment_id):
         serializer.save()
         return Response(serializer.data)
 
+@api_view(['GET'])
+def bookmarked_user_list(request, article_id):
+    article = Article.objects.get(id=article_id)
+    users = article.bookmark_users.all()
+    serializer = UserSerializer(users, many=True)
+
+    return Response(serializer.data)

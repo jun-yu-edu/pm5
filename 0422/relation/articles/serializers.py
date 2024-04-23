@@ -11,18 +11,15 @@ class CommentSerializer(serializers.ModelSerializer):
 
 
 class ArticleSerializer(serializers.ModelSerializer):
-
-
     class CommentSerializer(serializers.ModelSerializer):
-
         class Meta:
             model = Comment
             # fields = '__all__'
             fields = ['id', 'content']
         
-
     comment_set = CommentSerializer(many=True, required=False)
 
     class Meta:
         model = Article
-        fields = '__all__'
+        fields = ['id', 'title', 'content', 'created_at', 'comment_set',  'author']
+        extra_kwargs = {"author": {"read_only": True}}
