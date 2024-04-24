@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box{
+      width: 150px;
+      height: 150px;
+      border: 1px solid black;
+      margin: 1rem 1rem 1rem 1rem;
+      box-sizing: border-box;
+    }
+
+    .padding{
+      padding: 1rem 1rem 1rem 1rem ;
+    }
+
+    .text-align{
+      text-align: center;
+      line-height: 150px;
+    }
+
+    .margin-center{
+      margin: 0 auto 0 auto;
+    }
+
+    .flex{
+      display: flex;
+    }
+
+    .space-between{
+      justify-content: space-between;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="box padding">content</div>
+  <hr>
+
+  <div class="box text-align">content</div>
+  <hr>
+
+  <div class="box margin-center"></div>
+  <hr>
+
+  <div class="flex">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <hr>
+
+  <div class="flex space-between">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+  </div>
+  <hr>
+
+</body>
+</html>
