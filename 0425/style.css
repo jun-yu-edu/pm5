@@ -1,0 +1,68 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > ul {
+  display: flex;
+  font-size: 20px;
+}
+
+nav > ul > li{
+  margin: 0 1rem 0 1rem;
+}
+
+ul {
+  list-style-type: none;
+}
+
+header > img{
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+main {
+  width: 70%;
+  margin: 2rem auto 0 auto;
+}
+
+.introduction{
+  display: flex;
+}
+
+.introduction > div{
+  margin: 0 1rem 0 1rem;
+}
+
+.introduction > img{
+  width: 50%;
+}
+
+.introduction-title{
+  text-align: center;
+}
+
+.contact > h2 {
+  text-align: center;
+}
+
+.contact-form{
+  display: flex;
+  flex-direction: column;
+  border: 3px solid black;
+  padding: 1rem;
+  width: 40%;
+}
+
+.contact > div {
+  display:  flex;
+  justify-content: space-between;
+}
+
+.contact > div > img{
+  width: 40%;
+}

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
@@ -16,33 +17,34 @@
         <li><a href="">products</a></li>
       </ul>
     </nav>
-    <img width="300px" src="images/apparel.png" alt="">
+    <img src="images/apparel.png" alt="">
   </header>
 
 
   <main>
-    <article>
+    <article class="introduction">
 
-      <img width="300px" src="images/apparel2.jpg" alt="">
+      <img src="images/apparel2.jpg" alt="">
       <div>
-        <h2>About Our Company</h2>
+        <h2 class="introduction-title">About Our Company</h2>
         <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente nam mollitia obcaecati eum rerum corrupti earum aut incidunt minus ut, fugit blanditiis facilis eveniet, maiores eaque laboriosam quidem iste voluptas.</div>
       </div>
 
     </article>
 
 
-    <article>
+    <article class="contact">
       <h2>Contact Us</h2>
       <div>
-        <div>
-          <div>username</div>
-          <input type="text">
-          <div>email</div>
-          <input type="text">
-          <div>send</div>
-        </div>
-        <img width="300px" src="images/apparel3.jpg" alt="">
+        <form action="" class="contact-form">
+          <label for="username">Username</label>
+          <input type="text" name="username" id="username">
+          <label for="email">Email</label>
+          <input type="email" name="email" id="email">
+          <input type="submit" value="Send">  
+        </form>
+
+        <img src="images/apparel3.jpg" alt="">
       </div>
     </article>
 
