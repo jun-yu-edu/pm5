@@ -53,9 +53,15 @@ main {
 .contact-form{
   display: flex;
   flex-direction: column;
+  /* justify-content: space-between; */
+
   border: 3px solid black;
   padding: 1rem;
   width: 40%;
+}
+
+.contact-form > * {
+  margin: 6px 0 6px 0 ;
 }
 
 .contact > div {
@@ -65,4 +71,19 @@ main {
 
 .contact > div > img{
   width: 40%;
+}
+
+.contact-form-send{
+  width: 40%;
+  margin: 1rem auto 0 auto;
+}
+
+.more > h2 {
+  text-align: center;
+}
+
+.more > ul {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
 }
