@@ -1,27 +1,19 @@
 <template>
   <div>
-    <button @click="toggleVisibility">toggle</button>
-
-    <div v-if="isVisible">보일까 안보일까??</div>
+    <div v-for="url in urls">
+      <!-- {{ url }} -->
+      <a :href="url.url">{{ url.name }} </a>
+    </div>
   </div>
 </template>
 
 <script setup>
-import {ref} from 'vue'
-const isVisible = ref(true)
-
-function toggleVisibility() {
-    // true -> false
-    // false -> true
-    isVisible.value = !isVisible.value
-
-    // if (isVisible) {
-    //   isVisible = false
-    // } else{
-    //   isVisible = true
-    // }
-
-}
+const urls = [
+  { name: 'naver', url: 'https://www.naver.com/' },
+  { name: 'google', url: 'https://www.google.com/' },
+  { name: 'github', url: 'https://github.com/'},
+  { name: 'vue', url: 'https://ko.vuejs.org/'},
+]
 </script>
 
 <style lang="scss" scoped>
