@@ -1,36 +1,34 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue';
-import MyComponent from './components/MyComponent.vue';
-
-const myText = 'hello world!'
-const myNum = 88
-
-</script>
-
 <template>
   <div>
-    <a href="https://vitejs.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+    <!-- <nav class="border"> 네브바 </nav> -->
+    <NavBar/>
+    <div class="flex">
+      <!-- <aside class="border"> 어사이드</aside> -->
+      <Aside/>
+      <!-- <main class="border p-1">
+        메인
+        <div class="row">
+          <article class="border col-4">아티클</article>
+          <article class="border col-4">아티클</article>
+          <article class="border col-4">아티클</article>
+          <article class="border col-4">아티클</article>
+          <article class="border col-4">아티클</article>
+          <article class="border col-4">아티클</article>
+        </div>
+      </main> -->
+      <Main/>
+    </div>
   </div>
-  <HelloWorld msg="haha hoho" />
-  <MyComponent :text="myText" :num="myNum"/>
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
+<script setup>
+import NavBar from './components/NavBar.vue';
+import Aside from './components/Aside.vue';
+import Main from './components/Main.vue';
+</script>
+
+<style lang="scss" scoped>
+.flex {
+  display: flex;
 }
 </style>
