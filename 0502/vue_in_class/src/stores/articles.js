@@ -15,5 +15,14 @@ export const useArticleStore = defineStore('article', () => {
         articles.value = response.data
       })
   }
-  return { articles, fetchArticles}
+
+  function createArticle(data){
+    axios({
+      url : 'http://127.0.0.1:8000/articles/',
+      method : 'POST',
+      data : data
+    })
+  }
+
+  return { articles, fetchArticles, createArticle}
 })
