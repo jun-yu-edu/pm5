@@ -4,6 +4,7 @@
 
     <button @click="goHome">홈으로</button>
     <button @click="goAbout">어바웃으로</button>
+    <h1 @click="goContact">컨택트로 이동!</h1>
   </div>
 </template>
 
@@ -17,6 +18,9 @@ function goHome() {
 
 function goAbout() {
   router.push('/about')
+}
+function goContact(){
+  router.push('/contact')
 }
 
 </script>
