@@ -1,7 +1,14 @@
 <template>
   <div>
     <button @click="articleStore.fetchArticles">article 가져오기!</button>
-    {{ articleStore.articles }}
+    <!-- {{ articleStore.articles }} -->
+    <ul>
+      <li v-for="article in articleStore.articles">
+        <h2>{{ article.title }}</h2>
+        <p>{{ article.content }}</p>
+        <hr>
+      </li>
+    </ul>
   </div>
 </template>
 
